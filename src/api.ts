@@ -501,7 +501,7 @@ export class OpenSeaAPI {
         100
       )}...`
     );
-
+    console.log(finalOpts);
     return fetch(finalUrl, finalOpts).then(async (res) =>
       this._handleApiResponse(res)
     );
