@@ -914,23 +914,6 @@ export class OpenSeaSDK {
       paymentTokenAddress,
       startAmount: basePrice,
     });
-    if (openseaSellerFee) {
-      console.log(typeof openseaSellerFee);
-      Object.defineProperty(openseaSellerFee, "amount", {
-        value: "1",
-      });
-      Object.defineProperty(openseaSellerFee, "endAmount", {
-        value: "1",
-      });
-    }
-    if (collectionSellerFee) {
-      Object.defineProperty(collectionSellerFee, "amount", {
-        value: "1",
-      });
-      Object.defineProperty(collectionSellerFee, "endAmount", {
-        value: "1",
-      });
-    }
     const considerationFeeItems = [
       openseaSellerFee,
       collectionSellerFee,
@@ -1092,6 +1075,25 @@ export class OpenSeaSDK {
         startAmount: basePrice,
         endAmount: endPrice,
       });
+
+    if (openseaSellerFee) {
+      console.log(openseaSellerFee);
+      Object.defineProperty(openseaSellerFee, "amount", {
+        value: "1",
+      });
+      Object.defineProperty(openseaSellerFee, "endAmount", {
+        value: "1",
+      });
+    }
+    if (collectionSellerFee) {
+      Object.defineProperty(collectionSellerFee, "amount", {
+        value: "1",
+      });
+      Object.defineProperty(collectionSellerFee, "endAmount", {
+        value: "1",
+      });
+    }
+
     const considerationFeeItems = [
       sellerFee,
       openseaSellerFee,
